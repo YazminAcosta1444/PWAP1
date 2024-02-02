@@ -5,7 +5,6 @@ self.addEventListener('install', function(event) {
         '/',
         '../css/estiloIndex.css',
         '../css/estiloMenu.css',
-        
         'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
         '../js/ejemplo1.js',
       ]);
@@ -20,6 +19,7 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
