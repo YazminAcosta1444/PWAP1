@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pagina Web && APP</title>
+    <link rel="stylesheet" href="../css/estiloIndex.css">
+    <link rel="stylesheet" href="../css/estiloMenu.css">
+</head>
+
+<body>
+    <div id="idContenedorIndex">
+        <header id="idEncabezadoIndex">
+            <h1>Mi Pagina Web && APP</h1>
+        </header>
+        <nav id="idMenuIndex">
+            <ul class="topnav">
+                <li>
+                    <a class="active" href="inicio.html" target="iframeContenido">Inicio</a>
+                </li>
+                <li>
+                    <a href="Ejemplo1.html" target="iframeContenido">Ejemplo 1</a>
+                </li>
+                <li>
+                    <a href="ListaVideos.html" target="iframeContenido">Lista</a>
+                </li>
+                <li class="right">
+                    <a href="Perfil.html" target="iframeContenido">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+        <section id="idContenidoIndex">
+            <iframe src="" frameborder="0" name="iframeContenido" height="100%" width="100%"></iframe>
+        </section>
+        <footer id="idPieIndex">
+            <p>Aqui va el pie de pagina</p>
+        </footer>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registrado con éxito:', registration);
+                    // Verificar si hay una nueva versión del Service Worker disponible
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('Nueva versión disponible, recargando la página...');
+                                window.location.reload();
+                            }
+                        });
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error al registrar el Service Worker:', error);
+                });
+        }
+    </script>
+    
+</body>
+
+</html>
