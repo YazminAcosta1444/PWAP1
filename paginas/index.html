@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Pagina Web && APP</title>
-    <link rel="stylesheet" href="css/estiloIndex.css">
-    <link rel="stylesheet" href="css/estiloMenu.css">
+    <link rel="stylesheet" href="../css/estiloIndex.css">
+    <link rel="stylesheet" href="../css/estiloMenu.css">
 </head>
 
 <body>
@@ -37,28 +37,6 @@
             <p>Aqui va el pie de pagina</p>
         </footer>
     </div>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then((registration) => {
-                    console.log('Service Worker registrado con éxito:', registration);
-                    // Verificar si hay una nueva versión del Service Worker disponible
-                    registration.addEventListener('updatefound', () => {
-                        const newWorker = registration.installing;
-                        newWorker.addEventListener('statechange', () => {
-                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                console.log('Nueva versión disponible, recargando la página...');
-                                window.location.reload();
-                            }
-                        });
-                    });
-                })
-                .catch((error) => {
-                    console.error('Error al registrar el Service Worker:', error);
-                });
-        }
-    </script>
     
 </body>
 
