@@ -7,6 +7,7 @@ self.addEventListener('install', function(event) {
         '../css/estiloMenu.css',
         'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
         '../js/ejemplo1.js',
+        '../js/listaVideos.js'
       ]);
     })
   );
