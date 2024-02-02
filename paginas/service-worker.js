@@ -4,6 +4,8 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/',
         '../css/estiloIndex.css',
+        '../css/estiloMenu.css',
+        
         'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
         '../js/ejemplo1.js',
       ]);
