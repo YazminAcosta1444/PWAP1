@@ -3,9 +3,9 @@ self.addEventListener('install', function(event) {
     caches.open('v1').then(function(cache) {
       return cache.addAll([
         '/',
-        '/css/estiloIndex.css',
+        '../css/estiloIndex.css',
         'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-        'script.js',
+        '../js/ejemplo1.js',
       ]);
     })
   );
